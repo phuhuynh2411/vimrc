@@ -1,0 +1,45 @@
+set number
+set nocompatible
+set hidden
+
+set expandtab "Use spaces instead of tabs
+set shiftwidth=4 "The number of spaces inserted for each indention
+set tabstop=4 "Determines the number of characters the Tab character represents
+
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.vim/undo
+
+" Use insensetive search and smartcase
+set ignorecase
+set smartcase
+
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'morhetz/gruvbox'
+Plug 'arzg/vim-colors-xcode'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'simnalamburt/vim-mundo'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+syntax on
+set background=dark
+" colorscheme gruvbox
+" colorscheme solarized
+" colorscheme yorumi
+colorscheme xcodedark
+let g:airline_theme='simple'
+
+" NerdTree Shortcut
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
