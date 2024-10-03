@@ -13,6 +13,7 @@ set undodir=~/.vim/undo
 " Use insensetive search and smartcase
 set ignorecase
 set smartcase
+set relativenumber
 
 call plug#begin()
 
